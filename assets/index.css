@@ -1,0 +1,484 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html {
+  background-color: #555555;
+}
+
+* {
+  user-select: none;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: Microsoft YaHei;
+  /*background:#5d9cec*/
+}
+
+.gamezone {
+  width: 960px;
+  height: 940px;
+  margin: 0 auto;
+  background-image: url(../static/img/bg.png);
+  position: relative;
+}
+
+#jiandao :active {
+  background-image: url(../static/img/scorebg_top.png);
+}
+
+.gametop {
+  width: 845px;
+  height: 675px;
+  top: 50px;
+  left: 60px;
+  position: absolute;
+}
+
+.gamescore {
+  width: 100%;
+  height: 40px;
+}
+
+.gamescore_zone {
+  width: 100%;
+  height: 40px;
+  margin-left: 200px;
+}
+
+.gamescore_zone div {
+  width: 201px;
+  height: 38px;
+  line-height: 38px;
+  background-image: url(../static/img/scorebg_top.png);
+  font-family: score;
+  color: #ff0000;
+  font-size: 30px;
+  text-align: right;
+  letter-spacing: 1px;
+  float: left;
+  margin-right: 50px;
+}
+
+.gamescore_zone div span {
+  margin-right: 8px;
+}
+
+.gameeffect {
+  width: 485px;
+  height: 485px;
+  background-color: #e5e5e5;
+  margin-left: 20px;
+  float: left;
+  border-radius: 10px;
+  position: relative;
+}
+
+.gameeffect ul {
+  width: 469px;
+  height: 469px;
+  padding: 8px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+}
+
+.gameeffect ul li {
+  width: 65px;
+  height: 65px;
+  border-radius: 5px;
+  margin: 1px;
+  float: left;
+  color: #ffffff;
+  line-height: 65px;
+  text-align: center;
+}
+
+.gameeffect ul li img {
+  width: 60px;
+  height: 60px;
+}
+
+.gamevs_zone {
+  width: 334px;
+  height: 324px;
+  background-color: #e5e5e5;
+  top: 75px;
+  left: 75px;
+  position: absolute;
+  padding-top: 10px;
+}
+
+.gamevs_zone_pc {
+  width: 100px;
+  height: 90px;
+  background-color: #ffffff;
+  margin-left: 115px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: #555555 0px 0px 5px;
+}
+
+.gamevs_zone_pc img {
+  width: 60px;
+  height: 60px;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.gamevs_zone_player {
+  width: 100px;
+  height: 90px;
+  background-color: #ffffff;
+  margin-left: 115px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: #555555 0px 0px 5px;
+}
+
+.gamevs_zone_player /img {
+  width: 60px;
+  height: 60px;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.gamevs_zone_vs {
+  width: 210px;
+  height: 90px;
+  background-image: url(../static/img/scorebg_big.png);
+  margin-left: 60px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: #555555 0px 0px 5px;
+  font-family: score;
+  color: #ff0000;
+  line-height: 90px;
+  text-align: center;
+  font-size: 56px;
+}
+
+.gamemsg {
+  width: 255px;
+  height: 465px;
+  padding: 10px;
+  background-color: #e5e5e5;
+  margin-left: 5px;
+  float: left;
+  border-radius: 10px;
+}
+
+.gamemsg_zone {
+  width: 255px;
+  height: 125px;
+  font-size: 12px;
+  text-align: center;
+  background-color: #1a1a1a;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 3px #000000 inset;
+  position: relative;
+  overflow: hidden;
+  color: #c0c0c0;
+  line-height: 18px;
+}
+
+.gamemsg_zone marquee {
+  font-size: 12px;
+  color: #c0c0c0;
+  line-height: 20px;
+  margin-left: 10px;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.gamemsg_title {
+  width: 100px;
+  height: 26px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+  line-height: 26px;
+  background-image: url(../static/img/title_bg.png);
+}
+
+.userinfo {
+  font-size: 12px;
+  color: #c0c0c0;
+  text-align: left;
+}
+
+.userinfo img {
+  height: 40px;
+  width: 40px;
+  float: left;
+  margin-left: 20px;
+  object-fit: cover;
+}
+
+.userinfo div {
+  width: 150px;
+  float: left;
+  line-height: 20px;
+  margin-left: 10px;
+}
+
+.userlog {
+  width: 100%;
+  color: #c0c0c0;
+  font-size: 12px;
+  text-align: center;
+  line-height: 18px;
+}
+
+.userselect {
+  width: 240px;
+  height: 80px;
+  color: #ffffff;
+  text-align: center;
+  padding-left: 5px;
+}
+
+.userselect ul li {
+  height: 25px;
+  width: 80px;
+  float: left;
+}
+
+.userselect ul li img {
+  width: 20px;
+  height: 20px;
+}
+
+.userhandle {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 0px;
+  bottom: 0px;
+  line-height: 30px;
+  font-size: 12px;
+  position: absolute;
+}
+
+.userhandle a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.gamecontrol {
+  width: 100%;
+  height: 125px;
+}
+
+.gamecontrol_zone_score {
+  width: 90px;
+  height: 100%;
+  float: left;
+}
+
+.gamecontrol_zone_score1 {
+  width: 60px;
+  height: 28px;
+  line-height: 27px;
+  background-image: url(../static/img/scorebg_small.png);
+  margin-left: 15px;
+  margin-top: 13px;
+  font-family: score;
+  color: #ff0000;
+  font-size: 20px;
+  text-align: right;
+  letter-spacing: 1px;
+}
+
+.gamecontrol_zone_score1 span {
+  margin-right: 4px;
+}
+
+.gamecontrol_zone_score2 {
+  width: 85px;
+  height: 68px;
+  margin-left: 2px;
+  margin-top: 10px;
+}
+
+.gamecontrol_zone_score2 a img {
+  cursor: pointer;
+  border: none;
+}
+
+.gamecontrol_zone_button {
+  width: 90px;
+  height: 100%;
+  float: left;
+}
+
+.gamecontrol_zone_button div {
+  width: 85px;
+  height: 68px;
+  margin-left: 2px;
+  margin-top: 51px;
+}
+
+.gamecontrol_zone_button div a img {
+  cursor: pointer;
+  border: none;
+}
+
+.gamebottom {
+  width: 890px;
+  height: 145px;
+  background-color: #190403;
+  top: 730px;
+  left: 37px;
+  position: absolute;
+}
+
+.gamebottom img {
+  width: 890px;
+  height: 145px;
+  background-color: #190403;
+}
+
+.rank {
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  top: 165px;
+  height: 490px;
+  background-image: url('@/static/img/rank_bg.png');
+}
+
+.show_rank {
+  cursor: pointer;
+  /* overflow: hidden; */
+  position: absolute;
+  z-index: 2;
+  top: 70px;
+  width: 50px;
+  height: 200px;
+}
+
+.intro {
+  overflow: hidden;
+  background-position: right center;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 165px;
+  height: 490px;
+  background-image: url('@/static/img/intro_bg.png');
+}
+
+.show_intro {
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 70px;
+  width: 50px;
+  height: 200px;
+}
+
+.desc {
+  margin-right: 60px;
+  position: absolute;
+  right: 0px;
+  top: 35px;
+  width: 200px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+@keyframes rolling {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, -307px, 0);
+    transform: translate3d(0, -307px, 0);
+  }
+}
+
+.gamemsg_content {
+  -webkit-animation: 10s rolling linear infinite normal;
+  animation: 10s rolling linear infinite normal;
+}
+
+.active {
+  box-shadow: 0 0 20px 3px #f00;
+}
+
+.active-green {
+  animation: pulseShadow 2s infinite cubic-bezier(0.25, 1, 0.5, 1); /* 弹性动画 */
+}
+
+@keyframes pulseShadow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px 10px #0f0;
+  }
+  30% {
+    transform: scale(1.2); /* 略微放大 */
+    box-shadow: 0 0 30px 15px #0f0;
+  }
+  50% {
+    transform: scale(0.9); /* 略微缩小 */
+    box-shadow: 0 0 40px 20px #0f0;
+  }
+  70% {
+    transform: scale(1.1); /* 再放大 */
+    box-shadow: 0 0 35px 18px #0f0;
+  }
+  100% {
+    transform: scale(1); /* 恢复原状 */
+    box-shadow: 0 0 20px 10px #0f0;
+  }
+}
