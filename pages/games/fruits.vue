@@ -341,9 +341,7 @@
             <ul>
               <div
                 class="gamevs_zone"
-                style="
-                  background-image: url('@/public/img/20150116200012731.jpg');
-                "
+                style="background-image: url('/img/20150116200012731.jpg')"
               >
                 <div
                   id="systemChoose"
