@@ -458,7 +458,7 @@
               <ul id="showNowChoose">
                 <li v-for="fruit in selectedFruits">
                   <img
-                    :src="`/_nuxt/static/img/form${fruit.i + 1}.png`"
+                    :src="require(`@/assets/img/form${fruit.i + 1}.png`)"
                   />*&nbsp;{{ fruit.count }}
                 </li>
               </ul>
@@ -488,7 +488,7 @@
             <div class="gamecontrol_zone_score2">
               <a>
                 <img
-                  :src="`/_nuxt/static/img/img${i}.png`"
+                  :src="`/img/img${i}.png`"
                   @click="handleFruitButton(i - 1)"
                 />
               </a>
