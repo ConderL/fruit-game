@@ -4,6 +4,15 @@
   // @ts-ignore
   import familyMp3 from '@/static/audio/family.mp3'
 
+  // @ts-ignore
+  const images = import.meta.glob('@/assets/img/form*.png')
+
+  const getImage = (index: number) => {
+    // 动态加载图片
+    const imagePath = `@/assets/img/form${index + 1}.png`
+    return images[imagePath] ? images[imagePath]() : '' // 返回图片路径
+  }
+
   const toggleRankWidth = ref(false)
   const toggleIntroWidth = ref(false)
   const scores = ref(new Array(8).fill(0))
@@ -457,9 +466,7 @@
             <div class="userselect">
               <ul id="showNowChoose">
                 <li v-for="fruit in selectedFruits">
-                  <img
-                    :src="require(`@/assets/img/form${fruit.i + 1}.png`)"
-                  />*&nbsp;{{ fruit.count }}
+                  <img :src="getImage(fruit.i + 1)" />*&nbsp;{{ fruit.count }}
                 </li>
               </ul>
             </div>
@@ -488,7 +495,7 @@
             <div class="gamecontrol_zone_score2">
               <a>
                 <img
-                  :src="`/img/img${i}.png`"
+                  :src="`/_nuxt/static/img/img${i}.png`"
                   @click="handleFruitButton(i - 1)"
                 />
               </a>
