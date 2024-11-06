@@ -4,15 +4,6 @@
   // @ts-ignore
   import familyMp3 from '@/public/audio/family.mp3'
 
-  // @ts-ignore
-  const images = import.meta.glob('@/public/img/form*.png')
-
-  const getImage = (index: number) => {
-    // 动态加载图片
-    const imagePath = `@/public/img/form${index + 1}.png`
-    return images[imagePath] ? images[imagePath]() : '' // 返回图片路径
-  }
-
   const toggleRankWidth = ref(false)
   const toggleIntroWidth = ref(false)
   const scores = ref(new Array(8).fill(0))
@@ -351,7 +342,7 @@
               <div
                 class="gamevs_zone"
                 style="
-                  background-image: url('/_nuxt/public/img/20150116200012731.jpg');
+                  background-image: url('@/public/img/20150116200012731.jpg');
                 "
               >
                 <div
@@ -454,7 +445,9 @@
             <div class="userselect">
               <ul id="showNowChoose">
                 <li v-for="fruit in selectedFruits">
-                  <img :src="getImage(fruit.i + 1)" />*&nbsp;{{ fruit.count }}
+                  <img :src="`img/form${fruit.i + 1}.png`" />*&nbsp;{{
+                    fruit.count
+                  }}
                 </li>
               </ul>
             </div>
@@ -483,7 +476,7 @@
             <div class="gamecontrol_zone_score2">
               <a>
                 <img
-                  :src="`/_nuxt/public/img/img${i}.png`"
+                  :src="`/img/img${i}.png`"
                   @click="handleFruitButton(i - 1)"
                 />
               </a>

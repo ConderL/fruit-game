@@ -391,7 +391,7 @@ body {
   right: 0px;
   top: 165px;
   height: 490px;
-  background-image: url('@/public/img/rank_bg.png');
+  background-image: url('img/rank_bg.png');
 }
 
 .show_rank {
@@ -412,7 +412,7 @@ body {
   left: 0px;
   top: 165px;
   height: 490px;
-  background-image: url('@/public/img/intro_bg.png');
+  background-image: url('img/intro_bg.png');
 }
 
 .show_intro {
