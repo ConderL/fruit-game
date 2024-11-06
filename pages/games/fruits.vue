@@ -445,7 +445,7 @@
             <div class="userselect">
               <ul id="showNowChoose">
                 <li v-for="fruit in selectedFruits">
-                  <img :src="`img/form${fruit.i + 1}.png`" />*&nbsp;{{
+                  <img :src="`/img/form${fruit.i + 1}.png`" />*&nbsp;{{
                     fruit.count
                   }}
                 </li>
