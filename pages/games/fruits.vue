@@ -2,14 +2,14 @@
   import '@/assets/index.css'
   import { fruitsData, sortedFruitsData } from '~/constants'
   // @ts-ignore
-  import familyMp3 from '@/static/audio/family.mp3'
+  import familyMp3 from '@/public/audio/family.mp3'
 
   // @ts-ignore
-  const images = import.meta.glob('@/assets/img/form*.png')
+  const images = import.meta.glob('@/public/img/form*.png')
 
   const getImage = (index: number) => {
     // 动态加载图片
-    const imagePath = `@/assets/img/form${index + 1}.png`
+    const imagePath = `@/public/img/form${index + 1}.png`
     return images[imagePath] ? images[imagePath]() : '' // 返回图片路径
   }
 
@@ -66,7 +66,7 @@
 
     const mp3 = await import(
       /* @vite-ignore */
-      `/static/audio/press/press_${i + 1}.mp3`
+      `/public/audio/press/press_${i + 1}.mp3`
     )
     const audio = new Audio(mp3.default.replace('/@fs/__skip_vite', ''))
     audio.currentTime = 0.2
@@ -271,21 +271,9 @@
 <template>
   <TechPopup title="选择你的支付方式" ref="popup">
     <div class="flex justify-between w-400px my-30px">
-      <img
-        class="w-100px cursor-pointer"
-        src="@/static/img/alipay.png"
-        alt=""
-      />
-      <img
-        class="w-100px cursor-pointer"
-        src="@/static/img/wechatpay.png"
-        alt=""
-      />
-      <img
-        class="w-100px cursor-pointer"
-        src="@/static/img/images.jpg"
-        alt=""
-      />
+      <img class="w-100px cursor-pointer" src="@/public/img/alipay.png" />
+      <img class="w-100px cursor-pointer" src="@/public/img/wechatpay.png" />
+      <img class="w-100px cursor-pointer" src="@/public/img/images.jpg" />
     </div>
   </TechPopup>
   <div class="gamezone" @click="resetSidebar">
@@ -363,7 +351,7 @@
               <div
                 class="gamevs_zone"
                 style="
-                  background-image: url('/_nuxt/static/img/20150116200012731.jpg');
+                  background-image: url('/_nuxt/public/img/20150116200012731.jpg');
                 "
               >
                 <div
@@ -389,7 +377,7 @@
           <div class="gamemsg_zone" style="height: 90px">
             <div class="gamemsg_title">我的信息</div>
             <div class="userinfo">
-              <img src="@/static/img/1707160216218.jpg" />
+              <img src="@/public/img/1707160216218.jpg" />
               <div>昵称：Conder</div>
               <div>积分：<span id="span">0</span></div>
               <div
@@ -495,7 +483,7 @@
             <div class="gamecontrol_zone_score2">
               <a>
                 <img
-                  :src="`/_nuxt/static/img/img${i}.png`"
+                  :src="`/_nuxt/public/img/img${i}.png`"
                   @click="handleFruitButton(i - 1)"
                 />
               </a>
@@ -504,19 +492,19 @@
 
           <div class="gamecontrol_zone_button">
             <div class="cursor-pointer" @click="handleStart">
-              <img src="@/static/img/img9.png" />
+              <img src="@/public/img/img9.png" />
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="gamebottom">
-      <img src="@/static/img/20150116200049765.jpg" />
+      <img src="@/public/img/20150116200049765.jpg" />
     </div>
 
     <div v-show="isWarning" class="fullscreen-warning">
       <video ref="videoPlayer" autoplay loop muted playsinline>
-        <source src="@/static/family.mp4" type="video/mp4" />
+        <source src="@/public/family.mp4" type="video/mp4" />
       </video>
     </div>
   </div>

@@ -63,12 +63,12 @@ body {
   width: 960px;
   height: 940px;
   margin: 0 auto;
-  background-image: url(../static/img/bg.png);
+  background-image: url(../public/img/bg.png);
   position: relative;
 }
 
 #jiandao :active {
-  background-image: url(../static/img/scorebg_top.png);
+  background-image: url(../public/img/scorebg_top.png);
 }
 
 .gametop {
@@ -94,7 +94,7 @@ body {
   width: 201px;
   height: 38px;
   line-height: 38px;
-  background-image: url(../static/img/scorebg_top.png);
+  background-image: url(../public/img/scorebg_top.png);
   font-family: score;
   color: #ff0000;
   font-size: 30px;
@@ -190,7 +190,7 @@ body {
 .gamevs_zone_vs {
   width: 210px;
   height: 90px;
-  background-image: url(../static/img/scorebg_big.png);
+  background-image: url(../public/img/scorebg_big.png);
   margin-left: 60px;
   margin-top: 10px;
   border-radius: 5px;
@@ -245,7 +245,7 @@ body {
   font-size: 12px;
   text-align: center;
   line-height: 26px;
-  background-image: url(../static/img/title_bg.png);
+  background-image: url(../public/img/title_bg.png);
 }
 
 .userinfo {
@@ -326,7 +326,7 @@ body {
   width: 60px;
   height: 28px;
   line-height: 27px;
-  background-image: url(../static/img/scorebg_small.png);
+  background-image: url(../public/img/scorebg_small.png);
   margin-left: 15px;
   margin-top: 13px;
   font-family: score;
@@ -391,7 +391,7 @@ body {
   right: 0px;
   top: 165px;
   height: 490px;
-  background-image: url('@/static/img/rank_bg.png');
+  background-image: url('@/public/img/rank_bg.png');
 }
 
 .show_rank {
@@ -412,7 +412,7 @@ body {
   left: 0px;
   top: 165px;
   height: 490px;
-  background-image: url('@/static/img/intro_bg.png');
+  background-image: url('@/public/img/intro_bg.png');
 }
 
 .show_intro {
