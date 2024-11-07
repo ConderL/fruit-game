@@ -57,7 +57,7 @@
 
     const mp3 = await import(
       /* @vite-ignore */
-      `/public/audio/press/press_${i + 1}.mp3`
+      `/audio/press/press_${i + 1}.mp3`
     )
     const audio = new Audio(mp3.default.replace('/@fs/__skip_vite', ''))
     audio.currentTime = 0.2

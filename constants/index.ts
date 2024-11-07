@@ -1,7 +1,7 @@
 export const fruitsData = [
   {
     src: '/img/form7.png',
-    audioSrc: 'audio/fruits/7_l.mp3',
+    audioSrc: '/audio/fruits/7_l.mp3',
     color: '#2de43f',
     index: 0,
     score: 10,
@@ -9,7 +9,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form5.png',
-    audioSrc: 'audio/fruits/5_l.mp3',
+    audioSrc: '/audio/fruits/5_l.mp3',
     color: '#f038c4',
     index: 1,
     score: 20,
@@ -17,7 +17,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form1.png',
-    audioSrc: 'audio/fruits/1_l.mp3',
+    audioSrc: '/audio/fruits/1_l.mp3',
     color: '#fd9a38',
     index: 2,
     score: 120,
@@ -25,7 +25,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form1-2.png',
-    audioSrc: 'audio/fruits/1_s.mp3',
+    audioSrc: '/audio/fruits/1_s.mp3',
     color: '#2de43f',
     index: 3,
     score: 50,
@@ -33,7 +33,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form8.png',
-    audioSrc: 'audio/fruits/8_l.mp3',
+    audioSrc: '/audio/fruits/8_l.mp3',
     color: '#f038c4',
     index: 4,
     score: 5,
@@ -41,7 +41,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form8-2.png',
-    audioSrc: 'audio/fruits/8_s.mp3',
+    audioSrc: '/audio/fruits/8_s.mp3',
     color: '#fd9a38',
     index: 5,
     score: 2,
@@ -49,7 +49,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form6.png',
-    audioSrc: 'audio/fruits/6_l.mp3',
+    audioSrc: '/audio/fruits/6_l.mp3',
     color: '#2de43f',
     index: 6,
     score: 15,
@@ -57,7 +57,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form5-2.png',
-    audioSrc: 'audio/fruits/5_s.mp3',
+    audioSrc: '/audio/fruits/5_s.mp3',
     color: '#f038c4',
     index: 23,
     score: 2,
@@ -70,7 +70,7 @@ export const fruitsData = [
   {},
   {
     src: '/img/form4.png',
-    audioSrc: 'audio/fruits/4_l.mp3',
+    audioSrc: '/audio/fruits/4_l.mp3',
     color: '#f038c4',
     index: 7,
     score: 20,
@@ -78,7 +78,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form8.png',
-    audioSrc: 'audio/fruits/8_l.mp3',
+    audioSrc: '/audio/fruits/8_l.mp3',
     color: '#fd9a38',
     index: 22,
     score: 5,
@@ -91,7 +91,7 @@ export const fruitsData = [
   {},
   {
     src: '/img/form4-2.png',
-    audioSrc: 'audio/fruits/4_s.mp3',
+    audioSrc: '/audio/fruits/4_s.mp3',
     color: '#fd9a38',
     index: 8,
     score: 2,
@@ -114,7 +114,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form3-2.png',
-    audioSrc: 'audio/fruits/3_s.mp3',
+    audioSrc: '/audio/fruits/3_s.mp3',
     color: '#2de43f',
     index: 20,
     score: 2,
@@ -127,7 +127,7 @@ export const fruitsData = [
   {},
   {
     src: '/img/form8.png',
-    audioSrc: 'audio/fruits/8_l.mp3',
+    audioSrc: '/audio/fruits/8_l.mp3',
     color: '#2de43f',
     index: 10,
     score: 5,
@@ -135,7 +135,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form3.png',
-    audioSrc: 'audio/fruits/3_l.mp3',
+    audioSrc: '/audio/fruits/3_l.mp3',
     color: '#f038c4',
     index: 19,
     score: 30,
@@ -148,7 +148,7 @@ export const fruitsData = [
   {},
   {
     src: '/img/form7-2.png',
-    audioSrc: 'audio/fruits/7_s.mp3',
+    audioSrc: '/audio/fruits/7_s.mp3',
     color: '#f038c4',
     index: 11,
     score: 10,
@@ -156,7 +156,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form6.png',
-    audioSrc: 'audio/fruits/6_l.mp3',
+    audioSrc: '/audio/fruits/6_l.mp3',
     color: '#fd9a38',
     index: 18,
     score: 15,
@@ -164,7 +164,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form6-2.png',
-    audioSrc: 'audio/fruits/6_s.mp3',
+    audioSrc: '/audio/fruits/6_s.mp3',
     color: '#f038c4',
     index: 17,
     score: 2,
@@ -172,7 +172,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form8.png',
-    audioSrc: 'audio/fruits/8_l.mp3',
+    audioSrc: '/audio/fruits/8_l.mp3',
     color: '#2de43f',
     index: 16,
     score: 5,
@@ -180,7 +180,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form2.png',
-    audioSrc: 'audio/fruits/2_l.mp3',
+    audioSrc: '/audio/fruits/2_l.mp3',
     color: '#fd9a38',
     index: 15,
     score: 40,
@@ -188,7 +188,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form2-2.png',
-    audioSrc: 'audio/fruits/2_s.mp3',
+    audioSrc: '/audio/fruits/2_s.mp3',
     color: '#2de43f',
     index: 14,
     score: 2,
@@ -196,7 +196,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form5.png',
-    audioSrc: 'audio/fruits/5_l.mp3',
+    audioSrc: '/audio/fruits/5_l.mp3',
     color: '#f038c4',
     index: 13,
     score: 20,
@@ -204,7 +204,7 @@ export const fruitsData = [
   },
   {
     src: '/img/form7.png',
-    audioSrc: 'audio/fruits/7_l.mp3',
+    audioSrc: '/audio/fruits/7_l.mp3',
     color: '#fd9a38',
     index: 12,
     score: 10,
