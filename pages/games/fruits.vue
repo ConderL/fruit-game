@@ -1,8 +1,10 @@
 <script setup lang="ts">
   import '@/assets/index.css'
-  import { fruitsData, sortedFruitsData } from '~/constants'
+  import { fruitsData, sortedFruitsData, lowMelodys } from '~/constants'
   // @ts-ignore
   import familyMp3 from '@/public/audio/family.mp3'
+  // @ts-ignore
+  import audioStart from '@/public/audio/start.mp3'
 
   const toggleRankWidth = ref(false)
   const toggleIntroWidth = ref(false)
@@ -10,9 +12,12 @@
   const fruitActiveIndex = ref(-1)
   const fruitActiveIndexGroup = ref<number[]>([])
   const popup = ref(null)
+  const melodys = ref<HTMLAudioElement>()
+  const audios = ref<HTMLAudioElement>()
   const money = ref(100)
   const currentScore = ref(0)
   const isWarning = ref(false)
+  const paymentRef = ref(null)
 
   let keyPressed = false
   let circleCount = 0
@@ -20,8 +25,31 @@
   let timeout: NodeJS.Timeout
   let interval: number
   let luckyNum = 0
+  let lowMelodyIndex = 0
   let isEnd = false
   let isLucking = false
+
+  const activedImg = computed(() =>
+    fruitsData.find((fruit) => fruit.index === fruitActiveIndex.value),
+  )
+
+  const selectedFruits = computed(() =>
+    scores.value.map((count, i) => ({ i, count })).filter(({ count }) => count),
+  )
+
+  const allScore = computed(() => scores.value.reduce((pre, cur) => pre + cur))
+
+  watch(fruitActiveIndex, () => {
+    if (!isEnd) return
+    // @ts-ignore
+    const audio = melodys.value[lowMelodyIndex]
+    console.log(fruitActiveIndex.value, audio)
+    if (audio) {
+      audio.currentTime = 0.2
+      audio.play()
+    }
+    lowMelodyIndex++
+  })
 
   const resetData = () => {
     keyPressed = false
@@ -29,6 +57,7 @@
     isRunning = false
     interval = 0
     luckyNum = 0
+    lowMelodyIndex = 0
     isEnd = false
     isLucking = false
     fruitActiveIndexGroup.value = []
@@ -41,27 +70,15 @@
     toggleIntroWidth.value = false
   }
 
-  const activedImg = computed(() =>
-    fruitsData.find((fruit) => fruit.index === fruitActiveIndex.value),
-  )
-
-  const selectedFruits = computed(() =>
-    scores.value.map((count, i) => ({ i, count })).filter(({ count }) => count),
-  )
-
-  const allScore = computed(() => scores.value.reduce((pre, cur) => pre + cur))
-
   const handleFruitButton = async (i: number) => {
     if (isRunning || allScore.value === money.value) return
     scores.value.splice(i, 1, scores.value[i] + 1)
-
-    const mp3 = await import(
-      /* @vite-ignore */
-      `/audio/press/press_${i + 1}.mp3`
-    )
-    const audio = new Audio(mp3.default.replace('/@fs/__skip_vite', ''))
-    audio.currentTime = 0.2
-    audio.play()
+    if (audios.value) {
+      // @ts-ignore
+      const audio = audios.value[i]
+      audio.currentTime = 0.2
+      audio.play()
+    }
   }
 
   const changeNumAnimate = (isIncrease = true) => {
@@ -70,7 +87,7 @@
     if (isIncrease) {
       interval = 16.6
       intervalId = setInterval(() => {
-        interval = Math.min(300, interval * 1.3)
+        interval = Math.min(300, interval * 1.4)
         if (interval >= 300) {
           clearInterval(intervalId)
         }
@@ -78,7 +95,7 @@
     } else {
       interval = 300
       intervalId = setInterval(() => {
-        interval = Math.max(16.6, interval * 0.7)
+        interval = Math.max(16.6, interval * 0.6)
         if (interval <= 16.6) {
           clearInterval(intervalId)
         }
@@ -130,7 +147,7 @@
           if (isEnd) {
             playFruitAudio()
           }
-          resolve() // 返回字符串
+          resolve()
           handleEnd()
           return clearTimeout(timeout)
         }
@@ -221,6 +238,8 @@
 
   const handleStart = () => {
     if (isRunning || allScore.value > money.value || !allScore.value) return
+    const startAudio = new Audio(audioStart)
+    startAudio.play()
     resetData()
     changeNumAnimate(false)
     luckyNum = ~~(Math.random() * 24)
@@ -248,6 +267,13 @@
     popup.value.openPopup()
   }
 
+  const handleShowPayment = (type: number) => {
+    // @ts-ignore
+    popup.value.closePopup()
+    // @ts-ignore
+    paymentRef.value.show(type)
+  }
+
   onMounted(() => {
     window.addEventListener('keydown', handleKeydown)
     window.addEventListener('keyup', handleKeyup)
@@ -262,11 +288,20 @@
 <template>
   <TechPopup title="选择你的支付方式" ref="popup">
     <div class="flex justify-between w-400px my-30px">
-      <img class="w-100px cursor-pointer" src="@/public/img/alipay.png" />
-      <img class="w-100px cursor-pointer" src="@/public/img/wechatpay.png" />
+      <img
+        class="w-100px cursor-pointer"
+        @click="handleShowPayment(0)"
+        src="@/public/img/alipay.png"
+      />
+      <img
+        class="w-100px cursor-pointer"
+        @click="handleShowPayment(1)"
+        src="@/public/img/wechatpay.png"
+      />
       <img class="w-100px cursor-pointer" src="@/public/img/images.jpg" />
     </div>
   </TechPopup>
+  <Payment ref="paymentRef"></Payment>
   <div class="gamezone" @click="resetSidebar">
     <div
       @click.stop
@@ -479,6 +514,7 @@
                 />
               </a>
             </div>
+            <audio ref="audios" :src="`/audio/press/press_${i}.mp3`"></audio>
           </div>
 
           <div class="gamecontrol_zone_button">
@@ -499,6 +535,7 @@
       </video>
     </div>
   </div>
+  <audio ref="melodys" v-for="melody in lowMelodys" :src="melody"></audio>
 </template>
 
 <style scoped>

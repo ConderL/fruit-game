@@ -216,3 +216,20 @@ export const sortedFruitsData = fruitsData
   .filter((item) => JSON.stringify(item) !== '{}')
   // @ts-ignore
   .sort((a, b) => a.index - b.index)
+
+export const lowMelodys = [
+  '/audio/piano/C2.mp3',
+  '/audio/piano/D2.mp3',
+  '/audio/piano/E2.mp3',
+  '/audio/piano/F2.mp3',
+  '/audio/piano/G2.mp3',
+  '/audio/piano/A2.mp3',
+  '/audio/piano/B2.mp3',
+  '/audio/piano/C3.mp3',
+  '/audio/piano/D3.mp3',
+  '/audio/piano/E3.mp3',
+  '/audio/piano/F3.mp3',
+  '/audio/piano/G3.mp3',
+  '/audio/piano/A3.mp3',
+  '/audio/piano/B3.mp3',
+].reverse()

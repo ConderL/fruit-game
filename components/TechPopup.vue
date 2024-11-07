@@ -27,6 +27,7 @@
 
   defineExpose({
     openPopup,
+    closePopup,
   })
 </script>
 
