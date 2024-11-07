@@ -102,10 +102,10 @@
       timeout = setTimeout(() => {
         if (fruitActiveIndex.value === 24 && isIncrease) {
           circleCount++
-          fruitActiveIndex.value = 0
+          fruitActiveIndex.value = -1
         }
 
-        if (fruitActiveIndex.value === 0 && !isIncrease) {
+        if (fruitActiveIndex.value === -1 && !isIncrease) {
           circleCount++
           fruitActiveIndex.value = 24
         }
