@@ -43,10 +43,13 @@
     if (!isEnd) return
     // @ts-ignore
     const audio = melodys.value[lowMelodyIndex]
-    console.log(fruitActiveIndex.value, audio)
     if (audio) {
       audio.currentTime = 0.2
       audio.play()
+    }
+    if (fruitActiveIndex.value === luckyNum) {
+      // @ts-ignore
+      melodys.value.forEach((audio) => audio.pause())
     }
     lowMelodyIndex++
   })
@@ -70,10 +73,10 @@
     toggleIntroWidth.value = false
   }
 
-  const handleFruitButton = async (i: number) => {
+  const handleFruitButton = async (i: number, keyPressed = false) => {
     if (isRunning || allScore.value === money.value) return
     scores.value.splice(i, 1, scores.value[i] + 1)
-    if (audios.value) {
+    if (audios.value && !keyPressed) {
       // @ts-ignore
       const audio = audios.value[i]
       audio.currentTime = 0.2
@@ -252,9 +255,9 @@
 
   const handleKeydown = (event: KeyboardEvent) => {
     const key = event.key
-    if (key >= '1' && key <= '8' && !keyPressed) {
+    if (key >= '1' && key <= '8') {
       const buttonNumber = parseInt(key)
-      handleFruitButton(buttonNumber - 1)
+      handleFruitButton(buttonNumber - 1, keyPressed)
     }
     if (key === 'Enter') {
       handleStart()
