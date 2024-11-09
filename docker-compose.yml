@@ -1,0 +1,10 @@
+version: '3'
+services:
+  项目名称:
+    image: Dockfile-image
+    restart: unless-stopped
+    build:
+      context: ./
+    ports:
+      - 10200:10200
+    container_name: fruits-game

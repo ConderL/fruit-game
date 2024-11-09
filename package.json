@@ -7,11 +7,16 @@
     "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs --port 10200"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.7.0",
     "@unocss/nuxt": "^0.64.0",
     "nuxt": "^3.14.0",
+    "pinia": "^2.2.6",
+    "pinia-plugin-persistedstate": "^4.1.2",
+    "pm2": "^5.4.2",
     "tsparticles": "^3.5.0",
     "unocss": "^0.64.0",
     "vue": "latest",

@@ -5,5 +5,10 @@ export default defineNuxtConfig({
   modules: [
     // 使用 @unocss/nuxt 插件
     '@unocss/nuxt',
+    '@pinia/nuxt',
   ],
+  devServer: {
+    port: 8080,
+    host: '0.0.0.0',
+  },
 })
